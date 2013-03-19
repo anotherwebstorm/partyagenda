@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>PARTY AGENDA</title>
+    <meta name="author" content="@Anotherwebstorm">
+    <meta name="description" content="Party Agenda - Introduction to simple jQuery Mobile App made by Anotherwebstorm">
+    <meta name="keywords" content="Agenda, jQuery Mobile, jQuery, simple app">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+    <!--### CALL LIBRARIES AND SCRIPTS ###-->
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+    <script src="scripts.js"></script> 
+  </head>
+  <body>
+
+    <!--### HOME PARTY PAGE ###-->
+    <div id="homepage" data-role="page">
+      <div data-role="header">
+        <h1>PARTY AGENDA</h1>
+      </div>
+      <div data-role="content">
+        <a href="#add_party" data-role="button" data-theme="b" style="margin-bottom: 30px;">Add Party</a>
+        <!-- *** Party list goes here *** -->        
+        <ul id="parties_list" data-role="listview" data-filter="true" data-filter-placeholder="Search for Parties..."></ul>
+        <!-- *** @end list -->     
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <div data-role="navbar" data-iconpos="bottom">
+          <ul>
+            <li><a href="#" data-icon="star">My Parties</a></li>
+            <li><a href="#about_page" data-icon="info">About Party Agenda</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--### ABOUT PARTY PAGE ###-->
+    <div id="about_page" data-role="page">
+      <div data-role="header">
+        <h1>About</h1>
+        <a href="" data-rel="back">Back</a>
+      </div>
+      <div data-role="content">
+        <h1>About Party Agenda</h1>
+        <p>Party agenda was developed by <a href="https://twitter.com/anotherwebstorm" target="_blank">@Anotherwebstorm</a> has an introduction to jQuery Mobile.</p>
+        <p>Visit my <a href="https://github.com/anotherwebstorm" target="_blank">Github Repo</a> and download this app and use it with no restrictions.<p>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <div data-role="navbar" data-iconpos="bottom">
+          <ul>
+            <li><a href="#homepage" data-icon="star">My Parties</a></li>
+            <li><a href="#" data-icon="info">About Party Agenda</a></li>
+          </ul>
+        </div>
+      </div>      
+    </div>
+
+    <!--### ADD PARTY PAGE ###-->
+    <div id="add_party" data-role="page">
+      <div data-role="header">
+        <h1>Add Party</h1>
+        <a href="" data-rel="back">Back</a>
+      </div>
+      <div data-role="content">
+        <form id="form_new_party">
+          <input type="text" name="party_name" id="party_name" value="" placeholder="Party Name" />
+          <select name="party_type" id="party_type" data-native-menu="false">
+            <option value="Rock Party">Rock Party</option>
+            <option value="Friends Party">Friends Party</option>
+            <option value="Family Party">Family Party</option>
+            <option value="Birthday Party">Birthday Party</option>
+          </select>
+          <!--SLIDERS-->
+          <div class="ui-grid-b">
+            <div class="ui-block-a">
+              <!-- DRINKS -->
+              <div data-role="fieldcontain">
+                <label for="flip-drinks">Bring drinks:</label>
+                <select name="slider" id="flip-drinks" data-role="slider">
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select> 
+              </div>
+            </div>
+            <div class="ui-block-b">
+              <!-- FOOD -->
+              <div data-role="fieldcontain">
+                <label for="flip-food">Bring Food:</label>
+                <select name="slider" id="flip-food" data-role="slider">
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select> 
+              </div>              
+            </div>
+            <div class="ui-block-c">
+              <!-- GIFTS -->
+              <div data-role="fieldcontain">
+                <label for="flip-gift">Bring Gift:</label>
+                <select name="slider" id="flip-gift" data-role="slider">
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select> 
+              </div> 
+            </div>
+          </div>
+          <!--END SLIDERS-->
+          <input type="text" name="party_date" id="party_date" value="" placeholder="day/month/year" />
+          <input type="text" name="party_hour" id="party_hour" value="" placeholder="00:00" />
+          <input type="text" name="party_city" id="party_city" value="" placeholder="City" />
+          <input type="text" name="party_place" id="party_place" value="" placeholder="Place" />                    
+          <!--this button should be a submit button if we were on a online server-->
+          <input type="button" name="save_party" id="save_party" value="Save Party" data-theme="b" />
+          <!---->
+        </form>
+      </div>    
+    </div>
+
+  </body>
+</html>
